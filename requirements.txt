@@ -1,0 +1,6 @@
+openai
+transformers
+python-dotenv
+click
+torch
+datasets

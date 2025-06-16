@@ -1,0 +1,12 @@
+[tool.poetry]
+name = \"llmeval-pro\"
+version = \"0.1.0\"
+description = \"Modular LLM evaluation framework\"
+authors = [\"Your Name <you@example.com>\"]
+
+[tool.poetry.dependencies]
+python = \">=3.9\"
+openai = \"*\"
+transformers = \"*\"
+python-dotenv = \"*\"
+click = \"*\"
