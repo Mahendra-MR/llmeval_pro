@@ -1,4 +1,35 @@
+# Python cache and compiled files
 __pycache__/
-.env
 *.pyc
-.cache/
+*.pyo
+*.pyd
+
+# Python virtual environments
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Log files
+*.log
+
+# VS Code and JetBrains IDE settings
+.vscode/
+.idea/
+
+# macOS file
+.DS_Store
+
+# Session or temp folders (if app-specific)
+sessions/
+
+# Docker
+.dockerignore
+Dockerfile
+
+.pytest_cache/
+
+htmlcov/
+.coverage

@@ -14,7 +14,7 @@ MODEL_REGISTRY = {
 }
 
 @click.command()
-@click.option('--model', type=click.Choice(['openai', 'hf']), required=True)
+@click.option('--model', type=click.Choice(list(MODEL_REGISTRY.keys())), required=True)
 @click.option('--task', type=click.Choice(['gsm8k', 'truthfulqa', 'arc']), required=True)
 @click.option('--limit', type=int, default=5)
 @click.option('--output', type=str, default=None)

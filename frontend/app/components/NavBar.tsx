@@ -7,7 +7,7 @@ import useThemeToggle from '@/lib/useThemeToggle';
 
 export default function NavBar() {
   const { isOpen, toggleMenu, closeMenu } = useNavToggle();
-  const { theme, toggleTheme, mounted } = useThemeToggle(); // ✅ added mounted flag
+  const { theme, toggleTheme, mounted } = useThemeToggle();
 
   return (
     <nav className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 shadow-lg sticky top-0 z-50">
@@ -18,8 +18,9 @@ export default function NavBar() {
         <div className="hidden md:flex items-center gap-6">
           <NavLink href="/" text="Home" />
           <NavLink href="/upload" text="Upload" />
+          <NavLink href="/inference" text="Try Prompt" />
 
-          {/* 🌗 Theme Toggle */}
+          {/* Theme Toggle */}
           {mounted && (
             <button
               onClick={toggleTheme}
@@ -33,7 +34,6 @@ export default function NavBar() {
 
         {/* Mobile Nav Toggle */}
         <div className="md:hidden flex items-center gap-2">
-          {/* 🌗 Theme Toggle */}
           {mounted && (
             <button
               onClick={toggleTheme}
@@ -43,7 +43,6 @@ export default function NavBar() {
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           )}
-
           <button
             onClick={toggleMenu}
             className="text-white hover:text-gray-100"
@@ -59,6 +58,8 @@ export default function NavBar() {
         <div className="md:hidden bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 px-6 py-4 space-y-4 shadow-inner animate-fade-in-down rounded-b-xl">
           <NavLinkMobile href="/" text="Home" onClick={closeMenu} />
           <NavLinkMobile href="/upload" text="Upload" onClick={closeMenu} />
+          <NavLinkMobile href="/inference" text="Try Prompt" onClick={closeMenu} />
+
         </div>
       )}
     </nav>
